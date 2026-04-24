@@ -4,7 +4,7 @@ import Layout from "./pages/Layout";
 import Dashboard from "./pages/Dashboard";
 import Employees from "./pages/Employees";
 import Attendance from "./pages/Attendance";
-import Leaves from "./pages/Leaves";
+import Leave from "./pages/Leave"
 import Payslips from "./pages/Payslips";
 import Settings from "./pages/Settings";
 import PrintPaySlip from "./pages/PrintPaySlip";
@@ -44,7 +44,7 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/employees" element={<Employees />} />
           <Route path="/attendance" element={<Attendance />} />
-          <Route path="/leaves" element={<Leaves />} />
+          <Route path="/leave" element={<Leave />} />
           <Route path="/payslips" element={<Payslips />} />
           <Route path="/settings" element={<Settings />} />
         </Route>
