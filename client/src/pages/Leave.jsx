@@ -8,6 +8,7 @@ import {
   UmbrellaIcon,
 } from "lucide-react";
 import LeaveHistory from "../components/leave/LeaveHistory";
+import ApplyLeaveModal from "../components/leave/ApplyLeaveModal";
 
 const Leave = () => {
   const [leaves, setLeaves] = useState([]);
@@ -88,6 +89,11 @@ const Leave = () => {
       )}
 
       <LeaveHistory isAdmin={isAdmin} leaves={leaves} onUpdate={fetchLeaves} />
+      <ApplyLeaveModal
+        open={showModal}
+        onClose={() => setShowModal(false)}
+        onSuccess={fetchLeaves}
+      />
     </div>
   );
 };
