@@ -39,7 +39,10 @@ const PaySlipList = ({ payslips, isAdmin }) => {
 
                     <td className="text-slate-500">
                       <span className="badge bg-slate-100 text-slate-600">
-                        {format(new Date(payslip.year,payslip.month - 1),"MMM dd")}
+                        {format(
+                          new Date(payslip.year, payslip.month - 1),
+                          "MMM dd",
+                        )}
                       </span>
                     </td>
 
@@ -50,12 +53,18 @@ const PaySlipList = ({ payslips, isAdmin }) => {
                       ${payslip.netSalary?.toLocaleString()}
                     </td>
 
-                    <td
-                      className="text-center">
-                        <button onClick={()=>window.open(`/print/payslips/${payslip?._id || payslip?.id}`)} className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded text-blue-600 bg-blue-50 hover:bg-blue-100 transition-colors ring-1 ring-blue-600/10">
-                            <Download className="w-3 h-3 m-1.5"/> Download
-                        </button>
-                    </td>   
+                    <td className="text-center">
+                      <button
+                        onClick={() =>
+                          window.open(
+                            `/print/payslip/${payslip?._id || payslip?.id}`,
+                          )
+                        }
+                        className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded text-blue-600 bg-blue-50 hover:bg-blue-100 transition-colors ring-1 ring-blue-600/10"
+                      >
+                        <Download className="w-3 h-3 m-1.5" /> Download
+                      </button>
+                    </td>
                   </tr>
                 );
               })
